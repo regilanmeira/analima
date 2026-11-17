@@ -1,0 +1,734 @@
+/* =========================================
+   RESET E VARIÁVEIS (ESTILO MINIMALISTA)
+   ========================================= */
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #fafafa;
+    --text-primary: #1a1a1a;
+    --text-secondary: #666666;
+    --accent-color: #bfa181; /* Tom champagne/areia suave */
+    --border-color: #eaeaea;
+    --font-serif: 'Georgia', 'Times New Roman', serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+/* =========================================
+   CABEÇALHO E NAVEGAÇÃO (FLEXBOX)
+   ========================================= */
+.header {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-primary);
+}
+
+.logo span {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    display: block;
+    letter-spacing: 4px;
+    color: var(--text-secondary);
+    margin-top: -4px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-secondary);
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--text-primary);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Menu Mobile Hambúrguer */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 1.5px;
+    background-color: var(--text-primary);
+    transition: var(--transition);
+}
+
+/* =========================================
+   CONTAINER PRINCIPAL E TIPOGRAFIA
+   ========================================= */
+main {
+    flex: 1;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-subtitle {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent-color);
+    margin-bottom: 0.8rem;
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: var(--text-primary);
+    max-width: 650px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.2rem;
+    border: 1px solid var(--text-primary);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+}
+
+.btn-solid {
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+}
+
+.btn-solid:hover {
+    background-color: transparent;
+    color: var(--text-primary);
+}
+
+/* =========================================
+   PÁGINA INÍCIO (HERO + DESTAQUES)
+   ========================================= */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 2rem 5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.hero-image-wrapper {
+    width: 100%;
+    height: 75vh;
+    min-height: 450px;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-position: center 35%;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 720px;
+    margin-top: 3.5rem;
+}
+
+.hero-content h1 {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    margin-bottom: 2.2rem;
+}
+
+/* Destaque de Fotos Grandes na Home */
+.showcase-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.showcase-card {
+    flex: 1 1 calc(50% - 1.25rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.showcase-card img {
+    width: 100%;
+    height: 550px;
+}
+
+.showcase-caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.8rem;
+}
+
+/* =========================================
+   PÁGINA GALERIA (FILTRO POR TIPO DE FOTO)
+   ========================================= */
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3.5rem;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--text-primary);
+}
+
+.gallery-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.gallery-item {
+    flex: 1 1 calc(50% - 1rem); /* Fotos grandes: 2 por linha no desktop */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item.hide {
+    display: none;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 580px;
+    transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.02);
+}
+
+.gallery-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Lightbox Modal */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.97);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox img {
+    max-height: 82vh;
+    max-width: 90vw;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 2rem;
+    right: 2.5rem;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-primary);
+}
+
+.lightbox-caption {
+    margin-top: 1rem;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+/* =========================================
+   PÁGINA SOBRE
+   ========================================= */
+.about-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4rem;
+}
+
+.about-image {
+    flex: 1 1 420px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 620px;
+}
+
+.about-text {
+    flex: 1 1 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.about-text h2 {
+    font-family: var(--font-serif);
+    font-size: 2.3rem;
+    font-weight: normal;
+}
+
+.about-text p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.stats-row {
+    display: flex;
+    gap: 3rem;
+    margin-top: 1.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.stat-item h3 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.stat-item span {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-secondary);
+}
+
+/* =========================================
+   PÁGINA PACOTES
+   ========================================= */
+.packages-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.package-card {
+    flex: 1 1 320px;
+    border: 1px solid var(--border-color);
+    padding: 3rem 2.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--bg-primary);
+    transition: var(--transition);
+}
+
+.package-card:hover {
+    border-color: var(--text-primary);
+}
+
+.package-card.featured {
+    background-color: var(--bg-secondary);
+    border-color: var(--accent-color);
+}
+
+.package-tag {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-color);
+    margin-bottom: 0.8rem;
+}
+
+.package-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+}
+
+.package-price {
+    font-size: 1.5rem;
+    margin: 1.2rem 0 2rem;
+    color: var(--text-primary);
+}
+
+.package-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-bottom: 2.5rem;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+}
+
+.package-features li {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.7rem;
+}
+
+/* =========================================
+   PÁGINA CONTATO
+   ========================================= */
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+}
+
+.contact-info {
+    flex: 1 1 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-info h3 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: normal;
+}
+
+.info-block p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.info-block strong {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.3rem;
+    color: var(--text-primary);
+}
+
+.contact-form {
+    flex: 1 1 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.form-group {
+    flex: 1 1 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.9rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-primary);
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    outline: none;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--text-primary);
+}
+
+.form-feedback {
+    display: none;
+    padding: 1rem;
+    background-color: var(--bg-secondary);
+    border-left: 2px solid var(--text-primary);
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   BOTÕES FIXOS (WHATSAPP E INSTAGRAM)
+   ========================================= */
+.floating-social {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    z-index: 999;
+}
+
+.float-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.float-btn svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+.float-btn.whatsapp:hover {
+    background-color: #25D366;
+    color: #ffffff;
+    border-color: #25D366;
+    transform: translateY(-3px);
+}
+
+.float-btn.instagram:hover {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border-color: #1a1a1a;
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   RODAPÉ (FOOTER)
+   ========================================= */
+.footer {
+    border-top: 1px solid var(--border-color);
+    padding: 3rem 2rem;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* =========================================
+   RESPONSIVIDADE (TABLET E MOBILE)
+   ========================================= */
+@media (max-width: 900px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .showcase-card,
+    .gallery-item {
+        flex: 1 1 100%;
+    }
+
+    .showcase-card img,
+    .gallery-item img {
+        height: 440px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-primary);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .container {
+        padding: 3.5rem 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .hero-image-wrapper {
+        height: 55vh;
+    }
+
+    .floating-social {
+        bottom: 1.2rem;
+        right: 1.2rem;
+    }
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria | Ana Lima Fotografia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">Ana Lima<span>Fotografia</span></a>
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="galeria.html" class="active">Galeria</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="pacotes.html">Pacotes</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="section-header">
+            <span class="section-subtitle">Galeria por Estilo</span>
+            <h1 class="section-title">Diferentes atmosferas para celebrar o amor</h1>
+        </div>
+
+        <!-- Filtros por tipo de foto -->
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="todos">Todos os Ensaios</button>
+            <button class="filter-btn" data-filter="natureza">Natureza &amp; Pôr do Sol</button>
+            <button class="filter-btn" data-filter="urbano">Urbano &amp; Editorial</button>
+            <button class="filter-btn" data-filter="intimista">Em Casa &amp; Intimista</button>
+            <button class="filter-btn" data-filter="prewedding">Pré-Wedding</button>
+        </div>
+
+        <!-- Grade Flexbox de Fotos Grandes -->
+        <div class="gallery-flex">
+            <div class="gallery-item" data-category="natureza">
+                <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1000&q=85" alt="Casal abraçado em campo aberto">
+                <div class="gallery-info">
+                    <span class="photo-title">Laura &amp; Gabriel — Serra da Mantiqueira</span>
+                    <span>Natureza</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="urbano">
+                <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1000&q=85" alt="Casal andando de mãos dadas na cidade">
+                <div class="gallery-info">
+                    <span class="photo-title">Júlia &amp; Tiago — Centro Histórico</span>
+                    <span>Urbano</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="intimista">
+                <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1000&q=85" alt="Casal sorrindo em ambiente interno iluminado">
+                <div class="gallery-info">
+                    <span class="photo-title">Beatriz &amp; Rafael — Manhã de Domingo</span>
+                    <span>Intimista</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="prewedding">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=85" alt="Casal noivo em ensaio pré-casamento">
+                <div class="gallery-info">
+                    <span class="photo-title">Fernanda &amp; Bruno — Pré-Wedding</span>
+                    <span>Pré-Wedding</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="natureza">
+                <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1000&q=85" alt="Casal na praia ao entardecer">
+                <div class="gallery-info">
+                    <span class="photo-title">Camila &amp; Lucas — Litoral Norte</span>
+                    <span>Natureza</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="urbano">
+                <img src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?auto=format&fit=crop&w=1000&q=85" alt="Casal jovem rindo na rua">
+                <div class="gallery-info">
+                    <span class="photo-title">Mariana &amp; Pedro — Cafeteria &amp; Ruas</span>
+                    <span>Urbano</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox para visualização em tela cheia -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Fechar">&times;</button>
+        <img src="" alt="Foto ampliada" id="lightbox-img">
+        <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+
+    <!-- Botões Fixos WhatsApp e Instagram -->
+    <div class="floating-social">
+        <a href="https://wa.me/5511999999999?text=Olá%20Ana!%20Vi%20sua%20galeria%20e%20gostaria%20de%20um%20orçamento." target="_blank" rel="noopener" class="float-btn whatsapp" aria-label="WhatsApp" title="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="float-btn instagram" aria-label="Instagram" title="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <span>&copy; 2026 Ana Lima Fotografia. Todos os direitos reservados.</span>
+            <span>São Paulo • Ensaios em todo o Brasil</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
